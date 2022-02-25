@@ -5,3 +5,8 @@ monster::monster(std::string name, int health, int speed, int strength): entity(
 {
 	_health = health;
 };
+
+void monster::am_Monster()
+{
+	std::cout<<"This is a test to prove that i am a monster object and can only be used on a monster object";
+}

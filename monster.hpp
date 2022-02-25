@@ -9,6 +9,7 @@ protected:
 
 public:
 	monster(std::string name, int health, int speed, int strength);
+	void am_Monster();
 };
 
 #endif

@@ -8,3 +8,8 @@
 		_speed = speed;
 		_strength = strength;
 	};
+
+	void human::am_Human()
+	{
+		std::cout<<"This is a test to prove that i am a human object and can only be used on a human object";
+	}
