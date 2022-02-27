@@ -7,15 +7,15 @@ private:
 
 protected:
 	std::string _name;
-	int _hp;
-	int _atk;
-	int _def;
+	float _hp;
+	float _atk;
+	float _def;
 	int _add;
 	int _crit;
 	int _dodge;
 
 public:
-	entity(std::string name, int hp, int atk, int def, int add, int crit, int dodge);
+	entity(std::string name, float hp, float atk, float def, int add, int crit, int dodge);
 
 	bool isAlive();
 	bool isDead();
@@ -23,14 +23,14 @@ public:
 	void set_name(std::string name);
 	std::string get_name();
 
-	void set_hp(int hp);
-	int get_hp();
+	void set_hp(float hp);
+	float get_hp();
 
-	void set_atk(int atk);
-	int get_atk();
+	void set_atk(float atk);
+	float get_atk();
 
-	void set_def(int def);
-	int get_def();
+	void set_def(float def);
+	float get_def();
 
 	void set_add(int add);
 	int get_add();
@@ -41,7 +41,7 @@ public:
 	void set_dodge(int dodge);
 	int get_dodge();
 
-	void takeDamage(int x);
+	void takeDamage(float atk, float def, int add, int crit, int dodge);
 };
 
 #endif

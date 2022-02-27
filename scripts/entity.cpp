@@ -1,7 +1,9 @@
 #include <iostream>
 #include "entity.hpp"
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
 
-	entity::entity(std::string name, int hp, int atk, int def, int add, int crit, int dodge)
+	entity::entity(std::string name, float hp, float atk, float def, int add, int crit, int dodge)
 	{
 		_name = name;
 		_hp = hp;
@@ -32,32 +34,32 @@
 		return _name;
 	}
 
-	void entity::set_hp(int hp)
+	void entity::set_hp(float hp)
 	{
 		_hp = hp;
 	}
 
-	int entity::get_hp()
+	float entity::get_hp()
 	{
 		return _hp;
 	}
 
-	void entity::set_atk(int atk)
+	void entity::set_atk(float atk)
 	{
 		_atk = atk;
 	}
 
-	int entity::get_atk()
+	float entity::get_atk()
 	{
 		return _atk;
 	}
 
-	void entity::set_def(int def)
+	void entity::set_def(float def)
 	{
 		_def = def;
 	}
 
-	int entity::get_def()
+	float entity::get_def()
 	{
 		return _def;
 	}
@@ -92,7 +94,30 @@
 		return _dodge;
 	}
 
-	void entity::takeDamage(int hp)
+	void entity::takeDamage(float atk, float def, int add, int crit, int dodge)
 	{
-		_hp -= hp;
+		int i = 0;
+		float reduction = def/2;
+		float damage = atk - reduction;
+		srand(time(0));//need to find a way so that chance is different every time FOR, every time you load the exe. ATM it is one of the other.
+		int chance;
+		while(i < 1)
+		{
+			chance = rand() % 101;
+			i++;
+		}
+
+		std::cout << chance;
+
+		if (damage <= 0)
+		{
+			damage = atk;
+		}
+
+		if (crit >= chance)
+		{
+			damage += damage*1.9;
+			std::cout<<"CRIT";
+		}
+		_hp -= damage;
 	}

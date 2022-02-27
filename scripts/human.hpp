@@ -8,7 +8,7 @@ private:
 protected:
 
 public:
-	human(std::string name, int hp, int atk, int def, int add, int crit, int dodge);
+	human(std::string name, float hp, float atk, float def, int add, int crit, int dodge);
 	void am_Human();
 };
 

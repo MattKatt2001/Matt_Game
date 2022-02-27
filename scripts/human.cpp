@@ -1,7 +1,7 @@
 #include <iostream>
 #include "human.hpp"
 
-	human::human(std::string name, int hp, int atk, int def, int add, int crit, int dodge): entity(name, hp, atk, def, add, crit, dodge)
+	human::human(std::string name, float hp, float atk, float def, int add, int crit, int dodge): entity(name, hp, atk, def, add, crit, dodge)
 	{
 		_name = name;
 		_hp = hp;
