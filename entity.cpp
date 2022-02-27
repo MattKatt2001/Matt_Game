@@ -92,7 +92,7 @@
 		return _dodge;
 	}
 
-	void entity::takeDamage(int x)
+	void entity::takeDamage(int hp)
 	{
-		_hp -= x;
+		_hp -= hp;
 	}
