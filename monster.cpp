@@ -1,9 +1,15 @@
 #include <iostream>
 #include "monster.hpp"
 
-monster::monster(std::string name, int health, int speed, int strength): entity(name, health, speed, strength)
+monster::monster(std::string name, int hp, int atk, int def, int add, int crit, int dodge): entity(name, hp, atk, def, add, crit, dodge)
 {
-	_health = health;
+	_name = name;
+	_hp = hp;
+	_atk = atk;
+	_def = def;
+	_add = add;
+	_crit = crit;
+	_dodge = dodge;
 };
 
 void monster::am_Monster()

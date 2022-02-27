@@ -1,12 +1,15 @@
 #include <iostream>
 #include "human.hpp"
 
-	human::human(std::string name, int health, int speed, int strength): entity(name, health, speed, strength)
+	human::human(std::string name, int hp, int atk, int def, int add, int crit, int dodge): entity(name, hp, atk, def, add, crit, dodge)
 	{
 		_name = name;
-		_health = health;
-		_speed = speed;
-		_strength = strength;
+		_hp = hp;
+		_atk = atk;
+		_def = def;
+		_add = add;
+		_crit = crit;
+		_dodge = dodge;
 	};
 
 	void human::am_Human()
