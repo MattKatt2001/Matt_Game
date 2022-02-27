@@ -7,21 +7,40 @@ private:
 
 protected:
 	std::string _name;
-	int _health;
-	int _speed;
-	int _strength;
+	int _hp;
+	int _atk;
+	int _def;
+	int _add;
+	int _crit;
+	int _dodge;
 
 public:
-	entity(std::string name, int health, int speed, int strength);
+	entity(std::string name, int hp, int atk, int def, int add, int crit, int dodge);
+
 	bool isAlive();
+	bool isDead();
+
 	void set_name(std::string name);
 	std::string get_name();
-	void set_health(int health);
-	int get_health();
-	void set_speed(int speed);
-	int get_speed();
-	void set_strength(int strength);
-	int get_strength();
+
+	void set_hp(int hp);
+	int get_hp();
+
+	void set_atk(int atk);
+	int get_atk();
+
+	void set_def(int def);
+	int get_def();
+
+	void set_add(int add);
+	int get_add();
+
+	void set_crit(int crit);
+	int get_crit();
+
+	void set_dodge(int dodge);
+	int get_dodge();
+
 	void takeDamage(int x);
 };
 

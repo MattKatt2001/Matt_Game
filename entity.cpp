@@ -1,17 +1,25 @@
 #include <iostream>
 #include "entity.hpp"
 
-	entity::entity(std::string name, int health, int speed, int strength)
+	entity::entity(std::string name, int hp, int atk, int def, int add, int crit, int dodge)
 	{
 		_name = name;
-		_health = health;
-		_speed = speed;
-		_strength = strength;
+		_hp = hp;
+		_atk = atk;
+		_def = def;
+		_add = add;
+		_crit = crit;
+		_dodge = dodge;
 	};
 
 	bool entity::isAlive()
 	{
-  	return _health > 0;
+  	return _hp > 0;
+	}
+
+	bool entity::isDead()
+	{
+  	return _hp <= 0;
 	}
 
 	void entity::set_name(std::string name)
@@ -24,37 +32,67 @@
 		return _name;
 	}
 
-	void entity::set_health(int health)
+	void entity::set_hp(int hp)
 	{
-		_health = health;
+		_hp = hp;
 	}
 
-	int entity::get_health()
+	int entity::get_hp()
 	{
-		return _health;
+		return _hp;
 	}
 
-	void entity::set_speed(int speed)
+	void entity::set_atk(int atk)
 	{
-		_speed = speed;
+		_atk = atk;
 	}
 
-	int entity::get_speed()
+	int entity::get_atk()
 	{
-		return _speed;
+		return _atk;
 	}
 
-	void entity::set_strength(int strength)
+	void entity::set_def(int def)
 	{
-		_strength = strength;
+		_def = def;
 	}
 
-	int entity::get_strength()
+	int entity::get_def()
 	{
-		return _strength;
+		return _def;
+	}
+
+	void entity::set_add(int add)
+	{
+		_add = add;
+	}
+
+	int entity::get_add()
+	{
+		return _add;
+	}
+
+	void entity::set_crit(int crit)
+	{
+		_crit = crit;
+	}
+
+	int entity::get_crit()
+	{
+		return _crit;
+	}
+
+	void entity::set_dodge(int dodge)
+	{
+		_dodge = dodge;
+	}
+
+	int entity::get_dodge()
+	{
+		return _dodge;
 	}
 
 	void entity::takeDamage(int x)
 	{
-		_health -= x;
+		_hp -= x;
 	}

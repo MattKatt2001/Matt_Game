@@ -8,7 +8,7 @@ private:
 protected:
 
 public:
-	monster(std::string name, int health, int speed, int strength);
+	monster(std::string name, int hp, int atk, int def, int add, int crit, int dodge);
 	void am_Monster();
 };
 
