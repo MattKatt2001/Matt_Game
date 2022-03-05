@@ -1,7 +1,7 @@
 #include <iostream>
 #include "monster.hpp"
 
-monster::monster(std::string name, float hp, float atk, float def, int add, int crit, int dodge): entity(name, hp, atk, def, add, crit, dodge)
+monster::monster(std::string name, float hp, float atk, float def, int add, int crit, int dodge, int id): entity(name, hp, atk, def, add, crit, dodge, id)
 {
 	_name = name;
 	_hp = hp;
@@ -10,6 +10,7 @@ monster::monster(std::string name, float hp, float atk, float def, int add, int 
 	_add = add;
 	_crit = crit;
 	_dodge = dodge;
+	_id = id;
 };
 
 void monster::am_Monster()

@@ -13,9 +13,10 @@ protected:
 	int _add;
 	int _crit;
 	int _dodge;
+	int _id;
 
 public:
-	entity(std::string name, float hp, float atk, float def, int add, int crit, int dodge);
+	entity(std::string name, float hp, float atk, float def, int add, int crit, int dodge, int id);
 
 	bool isAlive();
 	bool isDead();
@@ -41,7 +42,10 @@ public:
 	void set_dodge(int dodge);
 	int get_dodge();
 
-	void takeDamage(float atk, float def, int add, int crit, int dodge);
+	void set_id(int id);
+	int get_id();
+
+	void takeDamage(float atk, float def, int add, int crit, int dodge, int id);
 };
 
 #endif

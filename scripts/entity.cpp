@@ -3,7 +3,7 @@
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
 
-	entity::entity(std::string name, float hp, float atk, float def, int add, int crit, int dodge)
+	entity::entity(std::string name, float hp, float atk, float def, int add, int crit, int dodge, int id)
 	{
 		_name = name;
 		_hp = hp;
@@ -12,6 +12,7 @@
 		_add = add;
 		_crit = crit;
 		_dodge = dodge;
+		_id = id;
 	};
 
 	bool entity::isAlive()
@@ -94,20 +95,23 @@
 		return _dodge;
 	}
 
-	void entity::takeDamage(float atk, float def, int add, int crit, int dodge)
+	void entity::set_id(int id)
 	{
-		int i = 0;
+		_id = id;
+	}
+
+	int entity::get_id()
+	{
+		return _id;
+	}
+
+	void entity::takeDamage(float atk, float def, int add, int crit, int dodge, int id)
+	{
+		srand(time(0));
 		float reduction = def/2;
 		float damage = atk - reduction;
-		srand(time(0));//need to find a way so that chance is different every time FOR, every time you load the exe. ATM it is one of the other.
-		int chance;
-		while(i < 1)
-		{
-			chance = rand() % 101;
-			i++;
-		}
-
-		std::cout << chance;
+		int chance = id;
+		std::cout << chance <<"\n";
 
 		if (damage <= 0)
 		{
@@ -116,8 +120,9 @@
 
 		if (crit >= chance)
 		{
-			damage += damage*1.9;
+			damage = damage*1.9;
 			std::cout<<"CRIT";
 		}
+
 		_hp -= damage;
 	}
