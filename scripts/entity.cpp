@@ -105,23 +105,28 @@
 		return _id;
 	}
 
-	void entity::takeDamage(float atk, float def, int add, int crit, int dodge, int id)
+	void entity::takeDamage(float atk, float def, int add, int crit, int dodge)
 	{
-		srand(time(0));
+		srand(time(NULL));
+		for(int i=0;i<1;i++)
+		{
+			_id = rand() % 100 +1;
+		}
+
 		float reduction = def/2;
 		float damage = atk - reduction;
-		int chance = id;
-		std::cout << chance <<"\n";
+
+		std::cout << _id <<"\n";
 
 		if (damage <= 0)
 		{
 			damage = atk;
 		}
 
-		if (crit >= chance)
+		if (crit >= _id)
 		{
 			damage = damage*1.9;
-			std::cout<<"CRIT";
+			std::cout<<"CRIT ";
 		}
 
 		_hp -= damage;

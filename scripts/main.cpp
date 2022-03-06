@@ -5,11 +5,7 @@
 
 int main()
 {
-	srand(time(0));
-	int mRand = rand() % 101; //make this a public variable in enttiy
-	int gRand = mRand + 1;
-
-	human Matt("Matthew", 100, 18, 17, 25, 25, 5, mRand);
+	human Matt("Matthew", 100, 18, 10, 25, 25, 5, 1);
 	float mHealth = Matt.get_hp();
 	float mAtk = Matt.get_atk();
 	float mDef = Matt.get_def();
@@ -18,7 +14,7 @@ int main()
 	int mDodge = Matt.get_dodge();
 	int mCount = Matt.get_id();
 
-	monster Godzilla("Godzilla", 100, 32, 1, 1, 25, 5, gRand);
+	monster Godzilla("Godzilla", 100, 32, 10, 1, 25, 5, 2);
 	float gHealth = Godzilla.get_hp();
 	float gAtk = Godzilla.get_atk();
 	float gDef = Godzilla.get_def();
@@ -29,14 +25,14 @@ int main()
 
 	while(Matt.isAlive() && Godzilla.isAlive())
 	{
-		Godzilla.takeDamage(mAtk, mDef, mAdd, mCrit, mDodge, mCount);
-		std::cout<<Matt.get_name() << " attacks leaving " << Godzilla.get_name() << " with " << Godzilla.get_hp() << " health." << "\n";
+		Godzilla.takeDamage(mAtk, mDef, mAdd, mCrit, mDodge);
+		std::cout<<Matt.get_name() << " attacks " << Godzilla.get_name() << " for " << Matt.get_atk() << " leaving " << Godzilla.get_name() << " with " << Godzilla.get_hp() << " health." << "\n";
 		std::cout<<"\n";
 
 		if(Godzilla.isAlive() && Matt.isAlive())
 		{
-			Matt.takeDamage(gAtk, gDef, gAdd, gCrit, gDodge, gCount);
-			std::cout<<Godzilla.get_name() << " attacks leaving " << Matt.get_name() << " with " << Matt.get_hp() << " health." << "\n";
+			Matt.takeDamage(gAtk, gDef, gAdd, gCrit, gDodge);
+			std::cout<<Godzilla.get_name() << " attacks " << Matt.get_name() << " for " << Godzilla.get_atk() << " leaving " << Matt.get_name() << " with " << Matt.get_hp() << " health." << "\n";
 		}
 
 		if(Matt.isDead())

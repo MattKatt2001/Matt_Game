@@ -45,7 +45,7 @@ public:
 	void set_id(int id);
 	int get_id();
 
-	void takeDamage(float atk, float def, int add, int crit, int dodge, int id);
+	void takeDamage(float atk, float def, int add, int crit, int dodge);
 };
 
 #endif
