@@ -6,20 +6,8 @@
 int main()
 {
 	human Matt("Matthew", 100, 10, 100, 25, 25, 5);
-	int mHealth = Matt.get_hp();
-	int mAtk = Matt.get_atk();
-	int mDef = Matt.get_def();
-	int mAdd = Matt.get_add();
-	int mCrit = Matt.get_crit();
-	int mDodge = Matt.get_dodge();
 
 	monster Godzilla("Godzilla", 100, 10, 100, 25, 25, 5);
-	int gHealth = Godzilla.get_hp();
-	int gAtk = Godzilla.get_atk();
-	int gDef = Godzilla.get_def();
-	int gAdd = Godzilla.get_add();
-	int gCrit = Godzilla.get_crit();
-	int gDodge = Godzilla.get_dodge();
 
 	while(Matt.isAlive() && Godzilla.isAlive())
 	{
